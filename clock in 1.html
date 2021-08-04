@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CLOCK</title>
+        <style>
+            #clockContainer{
+   
+    margin: auto;
+    height:40vw;
+    width:40vw;
+    background:url(index.jpg)no-repeat;
+    background-size:100%;
+        
+}
+#hour,#minute,#second,#dot{
+    position:relative;
+    background:black;
+    border-redius:10px;
+}
+#hour{
+    width: 1.2%;
+height: 16%;
+top: 42%;
+left: 49.6%;
+opacity: 1;
+   transform-origin: bottom; 
+    }
+#minute{
+        width: .9%;
+    height: 14%;
+    top: 28%;
+    left: 49.6%;
+    opacity: 1;
+transform-origin: bottom; 
+    }
+#second{
+   width: .6%;
+height: 11%;
+top: 17%;
+left: 49.6%;
+opacity: 1;
+transform-origin: bottom; 
+    }
+#dot{
+   width:4%;
+height: 4%;
+top: 16%;
+left: 47.6%;
+opacity: 1;
+transform-origin: bottom;
+border-radius: 20px;   
+    }
+    
+        </style>
+        <script>
+            setInterval(() => {
+    d = new Date();
+    htime = d.getHours();
+    mtime = d.getMinutes();
+    stime = d.getSeconds();
+    hrotation = 30*htime + mtime/2;
+    mrotation = 6*mtime;
+    srotation = 6*stime;
+
+    hour.style.transform = `rotate(${hrotation}deg)`;
+    minute.style.transform = `rotate(${mrotation}deg)`;
+    second.style.transform = `rotate(${srotation}deg)`;
+}, 1000);
+        </script>
+        
+  </head>
+  <body>
+      <div id="clockContainer">
+          <div id="hour"></div>
+          <div id="minute"></div>
+          <div id="second"></div>
+          <div id="dot"></div>
+      </div>
+  </body>
+        
+   
+</html>
